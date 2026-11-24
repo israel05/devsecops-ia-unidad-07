@@ -14,7 +14,7 @@ api_key_header = APIKeyHeader(
     description='Clave del laboratorio definida en DEMO_API_KEY (fichero .env).',
 )
 
-def require_api_key(api_key: str | None = Security(api_key_headera)) -> str:
+def require_api_key(api_key: str | None = Security(api_key_header)) -> str:
     """Dependencia reutilizable: exige una API key válida y devuelve la identidad.
 
     Autentica, pero no autoriza por tenant: todas las peticiones válidas se atribuyen
